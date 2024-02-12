@@ -1,0 +1,38 @@
+﻿<Window x:Class="MovieDatabaseClient.MovieEditorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MovieDatabaseClient"
+        mc:Ignorable="d"
+        Loaded="Window_Loaded"
+        KeyDown="Window_KeyDown"
+        Title="FilmSzerkesztő" MinHeight="300" Height="450" MinWidth="500" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Text="Cím"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Text="Főszereplő"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Text="Műfaj"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Text="Típus"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Text="Megjelenés"/>
+
+        <TextBox x:Name="TB_Title"      Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"    TextChanged="Property_Changed"  GotFocus="TB_GotFocus"/>
+        <TextBox x:Name="TB_Star"       Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"    TextChanged="Property_Changed"  GotFocus="TB_GotFocus"/>
+        <TextBox x:Name="TB_Category"   Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center"    TextChanged="Property_Changed"  GotFocus="TB_GotFocus"/>
+        <TextBox x:Name="TB_Type"       Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center"    TextChanged="Property_Changed"  GotFocus="TB_GotFocus"/>
+        <DatePicker x:Name="DP_Year"    Grid.Column="1" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center"    SelectedDateChanged="Property_Changed"/> 
+
+        <Button x:Name="BTN_Save" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Content="Mentés" Click="Saveclick" IsEnabled="False"/>
+    </Grid>
+</Window>
